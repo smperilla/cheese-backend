@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const PORT = 4000;
 const morgan = require("morgan");
+const cheeseController = require("./controllers/cheeseController.js");
 
 
 app.use(morgan("tiny"));
@@ -13,6 +14,7 @@ app.get("/", (req, res) => {
 });
 
 
+app.use("/cheese", cheeseController);
 
 
 app.listen(PORT, () => {console.log(
